@@ -1,0 +1,124 @@
+---
+import ContactCTA from '../components/ContactCTA.astro';
+import Hero from '../components/Hero.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="About | Pramod Naik" description="About Pramod Naik Lorem Ipsum">
+	<div class="stack gap-20">
+		<main class="wrapper about">
+			<Hero
+				title="About"
+				tagline="Thanks for stopping by. Read below to learn more about myself and my background."
+			>
+				<img
+					width="1553"
+					height="873"
+					src="/assets/at-work.jpg"
+					alt="Pramod Naik at work with a colleague"
+				/>
+			</Hero>
+
+			<section>
+				<h2 class="section-title">Background</h2>
+				<div class="content">
+					<p>
+						I am a DevOps Engineer specializing in building reliable, secure, and automated cloud infrastructure for data engineering and financial analytics platforms. 
+						
+<li>
+						DevOps & CI/CD: GitHub Actions, Azure DevOps Pipelines, Terraform, Helm, Docker, Kubernetes
+</li><li>
+Cloud Engineering: Azure Cloud (AKS, ADF, Synapse, Storage, Key Vault, Monitor)
+</li><li>
+Data Pipeline Automation: End-to-end orchestration, scheduling, and monitoring of ETL/ELT pipelines
+</li><li>
+FinOps: Cloud cost optimization, tagging strategy, and resource governance
+</li><li>
+Infrastructure as Code (IaC): Terraform, Bicep, ARM templates for repeatable, secure infrastructure
+</li><li>
+Azure Security: Role-Based Access Control (RBAC), Managed Identities, Network Security Groups, Policy Compliance
+</li><li>
+Observability & Incident Response: Prometheus, Grafana, Azure Monitor, Application Insights
+</li><li>
+Collaboration & Culture: Agile, cross-functional team leadership between France and Portugal
+</li><li>
+Automation & SRE Practices: Incident automation, reliability engineering, and alert tuning
+</li>
+			</p>		
+				
+		</section>
+			<section>
+				<h2 class="section-title">Education</h2>
+				<div class="content">
+					<p>Engineering in Information Techology</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Skills</h2>
+				<div class="content">
+					<p>DevOps, Azure </p>
+				</div>
+			</section>
+		</main>
+
+		<ContactCTA />
+	</div>
+</BaseLayout>
+
+<style>
+	.about {
+		display: flex;
+		flex-direction: column;
+		gap: 3.5rem;
+	}
+
+	img {
+		margin-top: 1.5rem;
+		border-radius: 1.5rem;
+		box-shadow: var(--shadow-md);
+	}
+
+	section {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		color: var(--gray-200);
+	}
+
+	.section-title {
+		grid-column-start: 1;
+		font-size: var(--text-xl);
+		color: var(--gray-0);
+	}
+
+	.content {
+		grid-column: 2 / 4;
+	}
+
+	.content :global(a) {
+		text-decoration: 1px solid underline transparent;
+		text-underline-offset: 0.25em;
+		transition: text-decoration-color var(--theme-transition);
+	}
+
+	.content :global(a:hover),
+	.content :global(a:focus) {
+		text-decoration-color: currentColor;
+	}
+
+	@media (min-width: 50em) {
+		.about {
+			display: grid;
+			grid-template-columns: 1fr 60% 1fr;
+		}
+
+		.about > :global(:first-child) {
+			grid-column-start: 2;
+		}
+
+		section {
+			display: contents;
+			font-size: var(--text-lg);
+		}
+	}
+</style>
